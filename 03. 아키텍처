@@ -17,3 +17,8 @@ AttributeError                            Traceback (most recent call last)
 ----> 9 SVG(model_to_dot(model, show_shapes=True).create(prog='dot', format='svg'))
 
 AttributeError: 'NoneType' object has no attribute 'create'
+
+===============================================================================================
+해결방법 :
+주피터 노트북 -> 구글코랩
+
