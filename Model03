@@ -1,0 +1,17 @@
+from IPython.display import SVG
+from keras.utils.vis_utils import model_to_dot
+
+%matplotlib inline
+
+SVG(model_to_dot(model, show_shapes=True).create(prog='dot', format='svg'))
+=============================================================================================
+오류 :
+('You must install pydot (`pip install pydot`) and install graphviz (see instructions at https://graphviz.gitlab.io/download/) ', 'for plot_model/model_to_dot to work.')
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-39-d728a6464b61> in <module>
+      7 get_ipython().run_line_magic('matplotlib', 'inline')
+      8 
+----> 9 SVG(model_to_dot(model, show_shapes=True).create(prog='dot', format='svg'))
+
+AttributeError: 'NoneType' object has no attribute 'create'
