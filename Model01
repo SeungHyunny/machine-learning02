@@ -60,3 +60,7 @@ AttributeError                            Traceback (most recent call last)
      50 for i in range(5):
 
 AttributeError: 'Sequential' object has no attribute 'predict_classes'
+=============================================================================================
+predict 는 probability를
+predict_class 는 label 을 제공
+
