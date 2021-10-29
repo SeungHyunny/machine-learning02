@@ -1,3 +1,5 @@
+//학습된 모델 저장하기
+
 # 0. 사용할 패키지 불러오기
 from keras.utils import np_utils
 from keras.datasets import mnist
