@@ -73,6 +73,17 @@ yhat = model.predict_classes(xhat) 주석처리
 2번이 좀 더 정확함
 =============================================================================================
 실행결과 : 실행시킬 때마다 바뀜
+Epoch 1/5
+563/563 [==============================] - 1s 2ms/step - loss: 1.1554 - accuracy: 0.7247 - val_loss: 0.6443 - val_accuracy: 0.8452
+Epoch 2/5
+563/563 [==============================] - 1s 2ms/step - loss: 0.5104 - accuracy: 0.8701 - val_loss: 0.4725 - val_accuracy: 0.8723
+Epoch 3/5
+563/563 [==============================] - 1s 2ms/step - loss: 0.4096 - accuracy: 0.8904 - val_loss: 0.4118 - val_accuracy: 0.8855
+Epoch 4/5
+563/563 [==============================] - 1s 2ms/step - loss: 0.3642 - accuracy: 0.8996 - val_loss: 0.3776 - val_accuracy: 0.8930
+Epoch 5/5
+563/563 [==============================] - 1s 2ms/step - loss: 0.3364 - accuracy: 0.9066 - val_loss: 0.3568 - val_accuracy: 0.8986
+loss_and_metrics : [0.3319035768508911, 0.906499981880188]
 True : 5, Predict : 5
 True : 4, Predict : 4
 True : 9, Predict : 9
