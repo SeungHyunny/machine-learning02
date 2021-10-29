@@ -1,0 +1,53 @@
+//모델 불러오기
+
+# 0. 사용할 패키지 불러오기
+from keras.utils import np_utils
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Activation
+import numpy as np
+from numpy import argmax
+
+# 1. 실무에 사용할 데이터 준비하기
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_test = x_test.reshape(10000, 784).astype('float32') / 255.0
+y_test = np_utils.to_categorical(y_test)
+xhat_idx = np.random.choice(x_test.shape[0], 5)
+xhat = x_test[xhat_idx]
+
+# 2. 모델 불러오기
+from keras.models import load_model
+model = load_model('mnist_mlp_model.h5')
+
+# 3. 모델 사용하기
+yhat = model.predict_classes(xhat)
+
+for i in range(5):
+    print('True : ' + str(argmax(y_test[xhat_idx[i]])) + ', Predict : ' + str(yhat[i]))
+    
+=========================================================================================
+yhat = model.predict_classes(xhat)
+-> yhat = np.argmax(model.predict(xhat), axis=-1) 변경
+
+========================================================================================
+실행결과 :
+1. yhat = model.predict(xhat) 일때
+True : 4, Predict : [5.28994133e-04 8.66383605e-04 1.02884660e-03 1.48370885e-03
+ 8.75150025e-01 2.57324777e-03 1.25814206e-03 1.41764702e-02
+ 6.49688940e-04 1.02284454e-01]
+True : 2, Predict : [1.6868798e-03 9.4013900e-05 9.6663386e-01 7.8307232e-04 9.4449345e-04
+ 5.3733995e-05 2.8094067e-03 1.4165004e-02 3.4417908e-03 9.3878973e-03]
+True : 4, Predict : [3.66157497e-06 6.11374053e-05 3.88225511e-04 1.17672525e-05
+ 9.92860734e-01 4.82492760e-05 6.88773522e-04 9.14966222e-05
+ 1.00018973e-04 5.74596552e-03]
+True : 8, Predict : [7.3566928e-04 2.1535758e-04 3.5746759e-03 3.5844769e-03 7.0092821e-04
+ 1.2760446e-02 6.4240303e-05 4.2421874e-05 9.7813064e-01 1.9109708e-04]
+True : 1, Predict : [7.1825503e-05 9.4023252e-01 1.4710270e-02 2.1619829e-03 5.3816679e-05
+ 7.7152043e-04 1.6970659e-03 2.4138199e-04 3.9800636e-02 2.5905741e-04]
+
+2. yhat = np.argmax(model.predict(xhat), axis=-1)
+True : 4, Predict : 4
+True : 2, Predict : 2
+True : 4, Predict : 4
+True : 8, Predict : 8
+True : 1, Predict : 1
