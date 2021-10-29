@@ -4,7 +4,7 @@
 
     실행결과 :
 
-<img src="https://user-images.githubusercontent.com/90026605/139365689-34ab8691-4942-4fba-9108-d8b4339dae40.png">
+<img src="https://user-images.githubusercontent.com/90026605/139383757-1801fa27-55fa-49c5-8cad-95a26c2c3ea1.png">
 04. 학습된 모델 불러오기👏
 
 <img src="https://user-images.githubusercontent.com/90026605/139365727-23f45cd3-b4cb-43e8-8fa2-665ccd2de368.png">
