@@ -62,5 +62,19 @@ AttributeError                            Traceback (most recent call last)
 AttributeError: 'Sequential' object has no attribute 'predict_classes'
 =============================================================================================
 predict 는 probability를
-predict_class 는 label 을 제공
+predict_classes 는 label 을 제공
 
+=============================================================================================
+해결 :
+yhat = model.predict_classes(xhat) 주석처리
+1번 yhat = np.round(yhat).astype(int) or
+2번 yhat = np.argmax(model.predict(xhat), axis=-1) 추가
+
+2번이 좀 더 정확함
+=============================================================================================
+실행결과 : 실행시킬 때마다 바뀜
+True : 5, Predict : 5
+True : 4, Predict : 4
+True : 9, Predict : 9
+True : 1, Predict : 1
+True : 9, Predict : 7
